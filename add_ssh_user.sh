@@ -5,6 +5,7 @@ __create_user() {
 useradd user
 SSH_USERPASS=newpass
 echo -e "$SSH_USERPASS\n$SSH_USERPASS" | (passwd --stdin user)
+usermod -a -G wheel user
 echo ssh user password: $SSH_USERPASS
 }
 
